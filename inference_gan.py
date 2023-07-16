@@ -34,6 +34,7 @@ def inference_fgan():
         img_list = sorted(glob.glob(os.path.join(args.input, '*')))
 
     os.makedirs(args.output, exist_ok=True)
+    print(img_list)
 
     # ------------------------ set up background upsampler ------------------------
     if args.bg_upsampler == 'realesrgan':
@@ -145,7 +146,7 @@ def inference_fgan():
             else:
                 save_restore_path = os.path.join(args.output, 'restored_imgs', f'{basename}.{extension}')
             imwrite(restored_img, save_restore_path)
-        print(f'Results are save')
+        print('Results are save')
 
 
 if __name__ == '__main__':
