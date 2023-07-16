@@ -24,7 +24,7 @@ def inference_fgan():
     args.__setattr__('only_center_face', True)
     args.__setattr__('suffix', None)
     args.__setattr__('ext', 'auto')
-    args.__setattr__('w', 0.5)
+    args.__setattr__('weight', 0.5)
     # ------------------------ input & output ------------------------
     if args.input.endswith('/'):
         args.input = args.input[:-1]
