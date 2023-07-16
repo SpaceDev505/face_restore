@@ -9,7 +9,7 @@ from basicsr.utils import imwrite
 from gfpgan import GFPGANer
 
 
-def main():
+def inference_fgan():
     """Inference demo for GFPGAN (for users).
     """
     parser = argparse.ArgumentParser()
@@ -171,4 +171,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    inference_fgan()
