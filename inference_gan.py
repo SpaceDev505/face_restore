@@ -13,39 +13,16 @@ def inference_fgan():
     """Inference demo for GFPGAN (for users).
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        '-i',
-        '--input',
-        type=str,
-        default='inputs/whole_imgs',
-        help='Input image or folder. Default: inputs/whole_imgs')
-    parser.add_argument('-o', '--output', type=str, default='results', help='Output folder. Default: results')
-    # we use version to select models, which is more user-friendly
-    parser.add_argument(
-        '-v', '--version', type=str, default='1.3', help='GFPGAN model version. Option: 1 | 1.2 | 1.3. Default: 1.3')
-    parser.add_argument(
-        '-s', '--upscale', type=int, default=2, help='The final upsampling scale of the image. Default: 2')
-
-    parser.add_argument(
-        '--bg_upsampler', type=str, default='realesrgan', help='background upsampler. Default: realesrgan')
-    parser.add_argument(
-        '--bg_tile',
-        type=int,
-        default=400,
-        help='Tile size for background sampler, 0 for no tile during testing. Default: 400')
-    parser.add_argument('--suffix', type=str, default=None, help='Suffix of the restored faces')
-    parser.add_argument('--only_center_face', action='store_true', help='Only restore the center face')
-    parser.add_argument('--aligned', action='store_true', help='Input are aligned faces')
-    parser.add_argument(
-        '--ext',
-        type=str,
-        default='auto',
-        help='Image extension. Options: auto | jpg | png, auto means using the same extension as inputs. Default: auto')
-    parser.add_argument('-w', '--weight', type=float, default=0.5, help='Adjustable weights.')
     args = parser.parse_args()
-
-    args = parser.parse_args()
-
+    args.__setattr__('-input', 'inputs/whole_imgs')
+    args.__setattr__('--output', 'results')
+    args.__setattr__('--version', '1.3')
+    args.__setattr__('--upscale', 2)
+    args.__setattr__('--bg_upsampler', 'realesrgan')
+    args.__setattr__('--bg_tile', 400)
+    args.__setattr__('--suffix', None)
+    args.__setattr__('--ext', 'auto')
+    args.__setattr__('-w', 0.5)
     # ------------------------ input & output ------------------------
     if args.input.endswith('/'):
         args.input = args.input[:-1]
