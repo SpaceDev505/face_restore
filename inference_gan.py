@@ -14,7 +14,7 @@ def inference_fgan():
     """
     parser = argparse.ArgumentParser()
     args = parser.parse_args()
-    args.__setattr__('-input', 'inputs/whole_imgs')
+    args.__setattr__('--input', 'inputs/whole_imgs')
     args.__setattr__('--output', 'results')
     args.__setattr__('--version', '1.3')
     args.__setattr__('--upscale', 2)
