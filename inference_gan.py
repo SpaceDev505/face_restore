@@ -21,6 +21,7 @@ def inference_fgan():
     args.__setattr__('bg_upsampler', 'realesrgan')
     args.__setattr__('bg_tile', 400)
     args.__setattr__('aligned', True)
+    args.__setattr__('only_center_face', True)
     args.__setattr__('suffix', None)
     args.__setattr__('ext', 'auto')
     args.__setattr__('w', 0.5)
