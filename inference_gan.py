@@ -14,15 +14,15 @@ def inference_fgan():
     """
     parser = argparse.ArgumentParser()
     args = parser.parse_args()
-    args.__setattr__('--input', 'inputs/whole_imgs')
-    args.__setattr__('--output', 'results')
-    args.__setattr__('--version', '1.3')
-    args.__setattr__('--upscale', 2)
-    args.__setattr__('--bg_upsampler', 'realesrgan')
-    args.__setattr__('--bg_tile', 400)
-    args.__setattr__('--suffix', None)
-    args.__setattr__('--ext', 'auto')
-    args.__setattr__('-w', 0.5)
+    args.__setattr__('input', 'inputs/whole_imgs')
+    args.__setattr__('output', 'results')
+    args.__setattr__('version', '1.3')
+    args.__setattr__('upscale', 2)
+    args.__setattr__('bg_upsampler', 'realesrgan')
+    args.__setattr__('bg_tile', 400)
+    args.__setattr__('suffix', None)
+    args.__setattr__('ext', 'auto')
+    args.__setattr__('w', 0.5)
     # ------------------------ input & output ------------------------
     if args.input.endswith('/'):
         args.input = args.input[:-1]
