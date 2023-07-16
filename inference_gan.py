@@ -145,8 +145,7 @@ def inference_fgan():
             else:
                 save_restore_path = os.path.join(args.output, 'restored_imgs', f'{basename}.{extension}')
             imwrite(restored_img, save_restore_path)
-
-         print(f'Results are in the [{args.output}] folder.')
+        print(f'Results are save')
 
 
 if __name__ == '__main__':
